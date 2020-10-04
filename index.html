@@ -7,8 +7,68 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
+    <link rel="stylesheet" href="./styles.css"
   </head>
-  <body>
+  <body class="grey darken-4">
+    <div class="nav z-depth-0">
+      <div class="section center">
+        <h3 class="white-text center">JonesFIT</h3>
+      </div>
+    </div>
+    <div class="section center">
+      <p class="grey-text flow-text">fiteroonie!</p>
+    </div>
+
+    <div class="container section">
+      <div class="row">
+        <div class="col s12 l5">
+          <button class="active" data-activity="cycling">Cycling</button>
+          <button data-activity="running">Running</button>
+          <button data-activity="swimming">Swimming</button>
+          <button data-activity="walking">Walking</button>
+        </div>
+        <div class="col s12 l6 push-l1">
+          <div class="canvas"></div>
+        </div>
+      </div>
+      <div class="row">
+        <form class="col m6 push-m3">
+          <p class="flow-text grey-text center">
+            How much <span>cycling</span> have you been doing today?
+          </p>
+          <input
+            type="text"
+            class="grey-text"
+            id="cycling"
+            placeholder="distance in meters"
+          />
+          <p class="center pink-text error text-lighten-1"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyDwq1lJsDWkQ-mJoPLUsd1CKjNWvEl3A94",
+        authDomain: "udemy-d3-firebase-b6bf3.firebaseapp.com",
+        databaseURL: "https://udemy-d3-firebase-b6bf3.firebaseio.com",
+        projectId: "udemy-d3-firebase-b6bf3",
+        storageBucket: "udemy-d3-firebase-b6bf3.appspot.com",
+        messagingSenderId: "444905959889",
+        appId: "1:444905959889:web:be460ef577518a99b5f0f0",
+        measurementId: "G-HZ9C32GZVV",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.2.0/d3.min.js"
       integrity="sha512-C2RveGuPIWqkaLAluvoxyiaN1XYNe5ss11urhZWZYBUA9Ydgj+hfGKPcxCzTwut1/fmjEZR7Ac35f2aycT8Ogw=="
